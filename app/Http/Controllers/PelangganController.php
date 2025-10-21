@@ -28,7 +28,6 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
 
         $data['first_name'] = $request->first_name;
         $data['last_name']  = $request->last_name;
@@ -36,8 +35,9 @@ class PelangganController extends Controller
         $data['gender']     = $request->gender;
         $data['email']      = $request->email;
         $data['phone']      = $request->phone;
+        // dd($request->all());
 
-        Pelanggan::create($data);
+       pelanggan::create($data);
 
         return redirect()->route('pelanggan.index')->with('success', 'Penambahan Data Berhasil!');
     }
